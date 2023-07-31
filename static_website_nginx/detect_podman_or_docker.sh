@@ -20,6 +20,9 @@ if [ -z "$CONTAINERRUNNER" ]; then
     fi
 fi
 
+# print out what we found
+echo "CONTAINERRUNNER: $CONTAINERRUNNER"
+
 # Give error if we have no CONTAINERRUNNER
 if [ -z "$CONTAINERRUNNER" ]; then
    echo "No podman or docker found on this system."
