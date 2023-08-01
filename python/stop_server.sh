@@ -5,4 +5,4 @@
 . ../detect_podman_or_docker.sh
 
 # stop service
-$CONTAINERRUNNER stop nginx_1 
+$CONTAINERRUNNER stop python_app_1 
