@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM ${DOCKERHUB}library/nginx:latest
 
 # content of the site folder will be copied to the default nginx public folder
 COPY ./site/* /usr/share/nginx/html/

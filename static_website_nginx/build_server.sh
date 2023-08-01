@@ -5,4 +5,8 @@
 . ../detect_podman_or_docker.sh
 
 # basic nginx as a first start
-$CONTAINERRUNNER build -t static_website_nginx .
+ENVOPTION=""
+if [ ! -z "$DOCKERHUB" ]; then
+  ENVOPTION=" --env=DOCKERHUB"
+fi
+$CONTAINERRUNNER build -t static_website_nginx $ENVOPTION .

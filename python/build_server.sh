@@ -4,5 +4,10 @@
 # detect docker or podman
 . ../detect_podman_or_docker.sh
 
-# basic nginx as a first start
-$CONTAINERRUNNER build -t python_jupyter .
+# build python_jupyter
+ENVOPTION=""
+if [ ! -z "$DOCKERHUB" ]; then
+  ENVOPTION=" --env=DOCKERHUB"
+fi
+$CONTAINERRUNNER build -t python_jupyter $ENVOPTION .
+

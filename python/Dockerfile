@@ -1,4 +1,4 @@
-FROM jupyter/scipy-notebook:latest
+FROM docker.io/jupyter/scipy-notebook:latest
 
 # Install Python packages
 RUN mamba install -c conda-forge leafmap geopandas localtileserver osmnx -y && \
