@@ -13,5 +13,5 @@ if [ ! -f `which $BROWSER` ];then
     echo "$BROWSER not found. Select a different one to continue."
     exit 1
 else
-    $BROWSER http://localhost:8888/lab
+    $BROWSER http://localhost:8888/lab/tree/work
 fi

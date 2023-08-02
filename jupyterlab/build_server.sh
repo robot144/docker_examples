@@ -4,6 +4,15 @@
 # detect docker or podman
 . ../detect_podman_or_docker.sh
 
+# Detect if we are running on a machine with a GPU
+if [ ! -z "$(lsmod |grep -e '^nvidia ')" ]; then
+    echo "Found NVIDIA GPU: I don't expect this to work without the nvidia-container-toolkit installed"
+    cp work/requirements_gpu.txt work/requirements.txt
+else
+    echo "No NVIDIA GPU found"
+    cp work/requirements_cpu.txt work/requirements.txt
+fi
+
 # build jupyter image
 COMMAND="$CONTAINERRUNNER build -t jupyter ."
 echo $COMMAND
